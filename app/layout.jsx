@@ -1,12 +1,29 @@
-import '@styles/global.css';
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
+import "@styles/globals.css";
 
 export const metadata = {
-    title: "Shompts",
-    description: "Discover & Share AI Prompts"
-}
-
-const layout = () => {
-  return <div>layout</div>;
+  title: "Shompts",
+  description: "Discover & Share AI Prompts",
 };
 
-export default layout;
+const RootLayout = ({ children }) => {
+  return (
+    <html lang="en">
+      <body>
+        <Provider>
+          <div className="main">
+            <div className="gradient"></div>
+          </div>
+
+          <main className="app">
+            <Nav />
+            {children}
+          </main>
+        </Provider>
+      </body>
+    </html>
+  );
+};
+
+export default RootLayout;
