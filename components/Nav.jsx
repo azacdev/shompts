@@ -5,19 +5,21 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { useState, useEffect } from "react";
 
 const Nav = () => {
-  const isLoggedIn = true;
+  const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
   const [toggleDropDown, setToggleDropDown] = useState(false);
 
+  // console.log(providers);
+
   useEffect(() => {
-    const getProviders = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
 
       setProviders(response);
     };
 
-    getProviders();
+    setUpProviders();
   }, []);
 
   return (
@@ -36,7 +38,7 @@ const Nav = () => {
       {/* Desktop Navigation */}
 
       <div className="hidden sm:flex">
-        {isLoggedIn ? (
+        {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
               Create Post
@@ -47,7 +49,7 @@ const Nav = () => {
 
             <Link href="/profile">
               <Image
-                src="/assets/images/logo.svg"
+                src={session?.user.image}
                 width={37}
                 height={37}
                 className="rounded-full"
@@ -75,10 +77,10 @@ const Nav = () => {
       {/* Mobile Navigation */}
 
       <div className="flex sm:hidden relative">
-        {isLoggedIn ? (
+        {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user.image}
               width={37}
               height={37}
               className="rounded-full"
@@ -120,7 +122,7 @@ const Nav = () => {
         ) : (
           <>
             {providers &&
-              Object.values(providers).map((provider) => {
+              Object.values(providers).map((provider) => (
                 <button
                   type="button"
                   key={provider.name}
@@ -128,8 +130,8 @@ const Nav = () => {
                   className="black_btn"
                 >
                   Sign In
-                </button>;
-              })}
+                </button>
+              ))}
           </>
         )}
       </div>
