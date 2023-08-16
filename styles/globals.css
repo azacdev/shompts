@@ -93,12 +93,20 @@
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }
 
+.green_lime_gradient {
+  @apply bg-gradient-to-r from-green-500 via-lime-400 to-lime-500 bg-clip-text text-transparent;
+}
+
 .green_gradient {
   @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
 }
 
 .blue_gradient {
   @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+.blueish_lime_gradient {
+  @apply bg-gradient-to-r from-blue-600 to-lime-400 bg-clip-text text-transparent;
 }
 
 .desc {
@@ -150,7 +158,7 @@
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit hover:shadow-xl hover:-translate-y-2 transition duration-300;
 }
 
 .flex-center {
