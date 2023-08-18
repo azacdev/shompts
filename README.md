@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="public/orion-anime.png" alt="page-image">
+<img src="public/shompts.png" alt="page-image">
 
 An AI prompting tool for modern world to discover, create and share creative prompts.
 
@@ -90,6 +90,7 @@ An AI prompting tool for modern world to discover, create and share creative pro
 ## Features
 
 - User Login and Authentication
+- Create, Edit or Delete
 - Search for specific prompt, tag or username by using the search functionality.
 - View detailed information about each prompt.
 
