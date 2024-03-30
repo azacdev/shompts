@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { cn } from "@/utils/cn";
-import PromptCard from "@components/prompt-card";
+import PromptCard from "@/components/prompt-card";
 
 export const HoverEffect = ({ items, className, handleToggleClick }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
