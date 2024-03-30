@@ -11,7 +11,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className="bg-black">
+      <body className="bg-black relative">
         <Provider>
           <Nav />
           <div className="flex flex-col">{children}</div>

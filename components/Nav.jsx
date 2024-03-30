@@ -22,7 +22,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="absolute top-5 w-full flex justify-between mb-16 z-50 max-w-7xl px-8">
+    <nav className="absolute top-5 w-full left-0 right-0 flex justify-between mb-16 z-50 max-w-7xl mx-auto px-8">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
           src="/assets/images/logo.svg"
