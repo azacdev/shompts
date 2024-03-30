@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import PromptCard from "@components/prompt-card";
+import PromptCard from "@/components/prompt-card";
 import { CardsList } from "./cards-list";
 
 const Feed = () => {

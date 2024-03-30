@@ -1,6 +1,7 @@
-import Nav from "@components/nav";
-import Provider from "@components/provider";
-import "@styles/globals.css";
+import Nav from "@/components/nav";
+import Provider from "@/components/provider";
+
+import "@/styles/globals.css";
 
 export const metadata = {
   title: "Shompts",

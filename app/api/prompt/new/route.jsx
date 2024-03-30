@@ -1,5 +1,5 @@
-import Prompt from "@models/prompt";
-import { connecterToDB } from "@utils/database";
+import Prompt from "@/models/prompt";
+import { connecterToDB } from "@/utils/database";
 
 export const POST = async (req) => {
   const { userId, prompt, tag } = await req.json();
