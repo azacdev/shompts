@@ -1,21 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import PromptCard from "@components/PromptCard";
-
-const PromptCardList = ({ data, handleToggleClick }) => {
-  return (
-    <div className="mt-16 prompt_layout">
-      {data.map((post) => (
-        <PromptCard
-          key={post._id}
-          post={post}
-          handleToggleClick={handleToggleClick}
-        />
-      ))}
-    </div>
-  );
-};
+import PromptCard from "@components/prompt-card";
+import { CardsList } from "./cards-list";
 
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
@@ -53,7 +40,7 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form className="relative w-full flex-center">
+      <form className="relative w-full flex-center max-w-2xl px-4 lg:px-8">
         <input
           type="text"
           placeholder="Search for prompt or a tag"
@@ -64,10 +51,7 @@ const Feed = () => {
         />
       </form>
 
-      <PromptCardList
-        data={filteredPost}
-        handleToggleClick={handleToggleClick}
-      />
+      <CardsList data={filteredPost} handleToggleClick={handleToggleClick} />
     </section>
   );
 };
