@@ -5,8 +5,6 @@ import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 const PromptCard = ({ item, handleToggleClick, handleEdit, handleDelete }) => {
-  console.log(item);
-  
   const { data: session } = useSession();
   const pathName = usePathname();
 
@@ -55,7 +53,7 @@ const PromptCard = ({ item, handleToggleClick, handleEdit, handleDelete }) => {
         </div>
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-gray-700 ">{item.prompt}</p>
+      <p className="my-4 font-satoshi text-sm text-neutral-300 ">{item.prompt}</p>
       <p
         className="font-inter text-sm blue_gradient cursor-pointer"
         onClick={() => handleToggleClick && handleToggleClick(item.tag)}
