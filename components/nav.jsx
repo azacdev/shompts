@@ -21,6 +21,8 @@ const Nav = () => {
     setUpProviders();
   }, []);
 
+  console.log(session?.user);
+
   return (
     <nav className="absolute top-5 w-full left-0 right-0 flex justify-between mb-16 z-50 max-w-7xl mx-auto px-8">
       <Link href="/" className="flex gap-2 flex-center">
@@ -93,9 +95,9 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
 
-      <div className="flex sm:hidden relative">
+      <div className="flex sm:hidden relative z-50">
         {session?.user ? (
-          <div className="flex">
+          <div className="flex cursor-pointer">
             <Image
               src={session?.user.image}
               width={37}
